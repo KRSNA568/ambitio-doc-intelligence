@@ -1,0 +1,40 @@
+SUPERIOR  COURT  ofthe STATE oF CALIFORNIA   --  COUNTY of SANTA  CLARA
+
+case no.   CV-2021-08842        ( breach of contract )
+
+MERIDIAN LOGISTICS INC  .......... plaintff
+   vs
+NORTHGATE  PACKAGING  SOLUTIONS llc ......... defendent
+
+
+~~~~ CASE  SUMMARY (draft, unedited intake notes) ~~~~
+
+doc type: complaint - breech of contract
+
+partys:
+ - plaintff = Meridian Logistics Inc , a Delaware corp, principle place
+   of buisness San Jose CA
+ - defendent = Northgate Packaging Solutions LLC ,  Fremont calif
+
+
+FACTS  (as recd from intake) :
+
+(1) on  jan 15 2021 the 2 partys signed a written Supply Agreemnt , northgate
+    was 2 deliver 50,000 corrugated shiping containrs / month @ fixd price
+    $2.40 per unit
+
+(2) dispute startd arnd march 2021 -- northgate only delivrd 32000 units in
+    march , ~18,000 short of the min
+
+(3) apr 2 2021 meridian snt written notce of breach , demandd cure w/in 30 days
+
+(4) northgate did NOT cure . may 2021 deliveries droppd 2 21,000 units , then
+    jun 10 2021 northgate said it wud suspnd ALL shipmnts indefinitly (raw
+    material shortage claimd)
+
+(5) bc of the suspnsion meridian had 2 buy replacment containrs on open mkt @
+    $3.85/unit = approx $1.2 M in cover damages
+
+relief : compensatry damages >= $1,200,000 + pre-judgmnt interst + costs
+
+filed jul 8 2021    //  atty : Dana Whitfeld Esq , Whitfield & Assoc LLP

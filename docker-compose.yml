@@ -1,0 +1,32 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    image: ambitio-doc-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+    volumes:
+      # Persist Chroma + the rules ledger across container restarts.
+      - chroma_data:/app/backend/.chroma
+      - rules_data:/app/backend/_db
+    command: uvicorn main:app --app-dir backend --host 0.0.0.0 --port 8000
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    image: ambitio-doc-frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+    # Vite dev server proxies /api -> backend:8000 inside the compose network.
+    environment:
+      - VITE_BACKEND=http://backend:8000
+
+volumes:
+  chroma_data:
+  rules_data:

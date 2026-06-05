@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background: #0b0e14;
+  color: #e6e6e6;
+}
+
+/* Citation marker styling injected into rendered drafts */
+.cite-marker {
+  cursor: pointer;
+  color: #7dd3fc;
+  font-weight: 600;
+}
+.cite-marker:hover {
+  text-decoration: underline;
+}
+.cite-active {
+  background: #1e3a5f;
+  border-radius: 3px;
+}

@@ -1,0 +1,18 @@
+{
+  "_note": "Second AI draft for a DIFFERENT document (a hypothetical second case), generated AFTER the three rules were learned. Note the model now defaults to a bulleted timeline, role-based party names, and terse phrasing WITHOUT the operator editing again. This is the payoff of the edit-learning loop.",
+  "doc_id": "demo_aster_02",
+  "draft_text": "Breach of a Master Services Agreement between Plaintiff and Defendant [E1].\n\nTimeline:\n- Feb 3, 2022: Parties execute MSA; Defendant to provide managed hosting at $14,000/month [E1].\n- Apr 2022: Defendant misses the 99.9% uptime SLA, with three multi-hour outages [E2].\n- May 9, 2022: Plaintiff issues written notice of default, 15-day cure window [E2].\n- Jun 2022: Outages continue; SLA credits unpaid [E3].\n\nDamages: Plaintiff migrated to a replacement provider, incurring ~$240,000 in transition and downtime costs [E4]. Relief sought: $240,000 plus interest and costs [E4].",
+  "citations": {
+    "s1": ["demo_aster_02::chunk::0"],
+    "s2": ["demo_aster_02::chunk::0"],
+    "s3": ["demo_aster_02::chunk::1"],
+    "s4": ["demo_aster_02::chunk::1"],
+    "s5": ["demo_aster_02::chunk::2"],
+    "s6": ["demo_aster_02::chunk::3"]
+  },
+  "applied_rules": [
+    "Present the chronology of events as a bulleted timeline with dates, not as flowing prose.",
+    "Refer to the parties by their litigation role (Plaintiff / Defendant) rather than by company name.",
+    "Keep the summary concise; trim introductory and connective prose and lead directly with substance."
+  ]
+}

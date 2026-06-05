@@ -1,0 +1,9 @@
+{
+  "_note": "What learner.py extracts from the diff between draft_v1 and edited_v1. These are stored in operator_rules.db and injected into every future /generate call.",
+  "extracted_rules": [
+    "Present the chronology of events as a bulleted timeline with dates, not as flowing prose.",
+    "Refer to the parties by their litigation role (Plaintiff / Defendant) rather than by company name.",
+    "Keep the summary concise; trim introductory and connective prose and lead directly with substance."
+  ],
+  "total_rules_stored": 3
+}

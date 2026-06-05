@@ -1,0 +1,45 @@
+{
+  "_note": "First AI draft, BEFORE any operator rules exist. Verbose prose, no timeline formatting. Every sentence carries an [E#] citation.",
+  "doc_id": "demo_meridian_01",
+  "draft_text": "This matter arises from a breach of a written Supply Agreement between Meridian Logistics, Inc. and Northgate Packaging Solutions, LLC [E1]. On January 15, 2021, the parties agreed that Northgate would deliver 50,000 corrugated shipping containers per month at a fixed price of $2.40 per unit [E1]. The dispute began in March 2021 when Northgate delivered only 32,000 units, falling 18,000 units short of the contractual minimum [E2]. On April 2, 2021, Meridian sent a written notice of breach demanding cure within thirty days [E2]. Northgate failed to cure, and in May 2021 deliveries fell further to 21,000 units before Northgate suspended all shipments on June 10, 2021, citing a raw-material shortage [E3]. As a direct result, Meridian procured replacement containers on the open market at $3.85 per unit, incurring approximately $1.2 million in cover damages [E4]. Meridian seeks compensatory damages of not less than $1,200,000, pre-judgment interest, and costs of suit [E4].",
+  "citations": {
+    "s1": ["demo_meridian_01::chunk::0"],
+    "s2": ["demo_meridian_01::chunk::0"],
+    "s3": ["demo_meridian_01::chunk::1"],
+    "s4": ["demo_meridian_01::chunk::1"],
+    "s5": ["demo_meridian_01::chunk::2"],
+    "s6": ["demo_meridian_01::chunk::3"],
+    "s7": ["demo_meridian_01::chunk::3"]
+  },
+  "evidence": [
+    {
+      "label": "E1",
+      "chunk_id": "demo_meridian_01::chunk::0",
+      "page_number": 1,
+      "score": 0.71,
+      "text": "On January 15, 2021, Meridian Logistics and Northgate Packaging entered into a written Supply Agreement under which Northgate agreed to deliver 50,000 corrugated shipping containers per month at a fixed price of $2.40 per unit."
+    },
+    {
+      "label": "E2",
+      "chunk_id": "demo_meridian_01::chunk::1",
+      "page_number": 1,
+      "score": 0.68,
+      "text": "The dispute began in March 2021 when Northgate delivered only 32,000 units in the month of March, falling 18,000 units short of the contractual minimum. On April 2, 2021, Meridian sent a written notice of breach demanding that Northgate cure the shortfall within thirty (30) days."
+    },
+    {
+      "label": "E3",
+      "chunk_id": "demo_meridian_01::chunk::2",
+      "page_number": 1,
+      "score": 0.66,
+      "text": "Northgate failed to cure. In May 2021, deliveries fell further to 21,000 units, and on June 10, 2021 Northgate notified Meridian that it would suspend all shipments indefinitely due to a raw-material shortage."
+    },
+    {
+      "label": "E4",
+      "chunk_id": "demo_meridian_01::chunk::3",
+      "page_number": 1,
+      "score": 0.64,
+      "text": "As a direct result of the suspension, Meridian was forced to procure replacement containers on the open market at $3.85 per unit, incurring approximately $1.2 million in cover damages. Plaintiff seeks compensatory damages of not less than $1,200,000, pre-judgment interest, and costs of suit."
+    }
+  ],
+  "applied_rules": []
+}
