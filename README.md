@@ -62,6 +62,13 @@ uvicorn main:app --app-dir backend --reload --port 8000
 ```
 Check it's alive: `curl localhost:8000/health`
 
+**Model & rate limits.** Defaults to `gemini-2.5-flash`; override with
+`export GEMINI_MODEL=gemini-2.5-flash-lite` (or `gemini-2.5-pro`). The free tier
+caps requests **per model per day**, so heavy testing can hit `429
+RESOURCE_EXHAUSTED` — `llm.py` retries with backoff and then degrades gracefully.
+If you exhaust one model, switch `GEMINI_MODEL` to another (each has its own
+quota) or enable billing.
+
 ### 3. Frontend (optional UI)
 ```bash
 cd frontend
@@ -81,6 +88,9 @@ npm run dev      # http://localhost:5173  (proxies /api → :8000)
 5. Edit the draft (e.g. turn the facts into a bulleted timeline) → **Submit Edit**
 6. The panel shows the **reusable rules** the system just learned
 7. Upload another doc and **Generate** again — the rules are already applied
+8. **Export** the result from the draft header: **Copy**, **↓ .md** (a formatted
+   report — fields + draft + evidence + applied rules), or **↓ .json** (the full
+   structured record). Downloads reflect your current edits.
 
 ### Via the API (curl)
 ```bash
@@ -146,8 +156,8 @@ ASSUMPTIONS.md → future work).
 ### Unit tests
 
 ```bash
-pip install pytest
-python -m pytest tests/ -q        # 26 tests: chunking, citations, JSON, diff/rules, eval
+pip install -r requirements-dev.txt   # adds pytest
+python -m pytest tests/ -q            # 26 tests: chunking, citations, JSON, diff/rules, eval
 ```
 
 ---
@@ -173,10 +183,18 @@ tests/      pytest unit suite (26 tests, no network needed)
 ```
 
 ## Sample inputs
-- `01_clean_case_summary.txt` — born-digital, text-based
+Synthetic legal documents spanning case types and "messiness" levels (no real PII):
+
+- `01_clean_case_summary.txt` — born-digital, text-based (Meridian v. Northgate)
 - `02_messy_case_summary.txt` — typo-ridden, inconsistent formatting
 - `03_handwritten_note.txt` — terse, abbreviated intake note
-- `04_scanned_notice.png` — a **real degraded scan** (grayscale, skew, noise)
-  that exercises the pytesseract OCR path. Regenerate with
-  `python data/sample_inputs/generate_scanned_sample.py`. Requires the
+- `05_employment_dispute.txt` — clean wrongful-termination complaint (Ramesh v. Heliodon)
+- `06_messy_lease_dispute.txt` — noisy commercial-lease/eviction intake (Coral Bay v. Sunfish)
+- `07_injury_intake_note.txt` — abbreviated personal-injury scratch note (Carter)
+- `04_scanned_notice.png` / `08_scanned_demand_letter.png` — **real degraded scans**
+  (grayscale, skew, noise) that exercise the pytesseract OCR path. Regenerate the
+  first with `python data/sample_inputs/generate_scanned_sample.py`. Requires the
   `tesseract` binary (`brew install tesseract`).
+
+> Tip: longer docs (`01`, `05`) split into multiple chunks, so you'll see several
+> evidence blocks (`[E1]`, `[E2]`…); short notes produce a single block.

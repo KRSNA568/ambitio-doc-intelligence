@@ -30,7 +30,9 @@
 ```
 
 The data contract between every stage lives in `models.py`, so each module can
-be imported and unit-tested on its own.
+be imported and unit-tested on its own. The three stages that call the LLM
+(`processor`, `generator`, `learner`) all go through a single access point,
+`llm.py`, so the provider/model lives in exactly one file.
 
 ---
 
@@ -66,6 +68,20 @@ reconstructs the citation map from inline markers if the model omits the JSON.
 
 ### `learner.py` — the edit-learning loop *(key differentiator)*
 See the dedicated section below.
+
+### `llm.py` — single LLM access point
+`processor`, `generator`, and `learner` all need text generation, so rather than
+duplicate client code three times, every call routes through `llm.generate_text()`.
+This means one file knows which provider/model/SDK is in use (Google Gemini via
+the `google-genai` SDK, `gemini-2.5-flash` by default, `GEMINI_MODEL`-overridable)
+— swapping providers or models is a one-file change and each caller stays
+provider-agnostic. Two Gemini-specific concerns are handled here once for
+everyone: (1) **thinking is disabled** (`thinking_budget=0`) because Gemini 2.5
+draws thinking tokens from `max_output_tokens` and can otherwise truncate JSON
+mid-string; (2) **transient `429`/`503` errors are retried** with bounded
+exponential backoff that honors the server's `retryDelay`. `llm.extract_json()`
+also lives here — a lenient parser (strips ```` ``` ```` fences, `raw_decode`s the
+first value) that makes Gemini's fenced/trailing-prose output safe to parse.
 
 ### `main.py` — orchestration
 A thin FastAPI layer that sequences the modules and holds a small in-memory
