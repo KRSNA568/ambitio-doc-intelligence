@@ -1,0 +1,32 @@
+CIRCUIT COURT  ::  ELEVENTH JUDICIAL  ::  MIAMI-DADE  FL
+
+case  no   2023-013788-CA-01      [ commercial lease  /  eviction ]
+
+CORAL BAY  PROPERTIES LLC  ........... landlrd / plaintif
+    v
+SUNFISH  COFFEE  ROASTERS  inc .......... tennant / defendnt
+
+
+==== summary  (intake , NOT proofread) ====
+
+doctype : complaint - commercl lease breach + evicton
+
+partys :
+  - landlrd = Coral Bay Properties LLC ( FL ltd liability co )
+  - tennant = Sunfish Coffee Roasters Inc , operates a cafe @ 1820 Brickell Ave
+
+facts (rough) :
+ (1) lease singed 3/1/2022  -- 5 yr term , base rent $9,250/mo , triple net
+ (2) tennant stopd paying rent arnd feb 2023 ; claims AC system broke & landlrd
+     wuld not repair (habitability??)
+ (3) landlrd srvd  3-day notice  to pay or quit on  3/14/2023
+ (4) tennant did NOT pay , still occuping the premis as of filing
+ (5) unpaid rent now ~ $46,250  ( 5 months @ 9250 )  + late fees
+ (6) landlrd also claims tennant made unaproved alterations ( knocked down a
+     wall , added gas line w/o permit )
+
+relief :  possession of premis + back rent 46,250 + late fees + atty fees +
+          costs ; also wants tennant to restore the wall
+
+filed   apr 4 2023      atty : R. Okonkwo , Okonkwo & Pierre PLLC
+note: tennant has filed a counterclaim re: constructive evicton (sep doc)

@@ -92,6 +92,7 @@ export default function App() {
             <DraftEditor
               docId={doc.doc_id}
               draft={draft}
+              structuredFields={doc.structured_fields}
               activeChunk={activeChunk}
               onCiteClick={setActiveChunk}
               onLearned={refreshRules}

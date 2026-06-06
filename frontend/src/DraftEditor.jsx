@@ -1,5 +1,11 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { submitEdit } from "./api.js";
+import {
+  buildMarkdown,
+  buildReportObject,
+  slug,
+  triggerDownload,
+} from "./exportUtils.js";
 
 // Shows the generated draft two ways:
 //   - a rendered view with clickable [E#] citation markers
@@ -9,6 +15,7 @@ import { submitEdit } from "./api.js";
 export default function DraftEditor({
   docId,
   draft,
+  structuredFields,
   activeChunk,
   onCiteClick,
   onLearned,
@@ -17,6 +24,39 @@ export default function DraftEditor({
   const [submitting, setSubmitting] = useState(false);
   const [result, setResult] = useState(null);
   const [err, setErr] = useState(null);
+  const [copied, setCopied] = useState(false);
+
+  const fileBase = `case-summary-${slug(structuredFields?.case_number || docId)}`;
+
+  function handleDownloadMd() {
+    triggerDownload(
+      `${fileBase}.md`,
+      buildMarkdown({ docId, fields: structuredFields, draft, editedText: edited }),
+      "text/markdown"
+    );
+  }
+
+  function handleDownloadJson() {
+    triggerDownload(
+      `${fileBase}.json`,
+      JSON.stringify(
+        buildReportObject({ docId, fields: structuredFields, draft, editedText: edited }),
+        null,
+        2
+      ),
+      "application/json"
+    );
+  }
+
+  async function handleCopy() {
+    try {
+      await navigator.clipboard.writeText(edited);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    } catch (e) {
+      setErr("Clipboard copy blocked by the browser.");
+    }
+  }
 
   // Reset editor when a fresh draft arrives.
   useEffect(() => {
@@ -48,13 +88,36 @@ export default function DraftEditor({
 
   return (
     <div className="space-y-4">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between gap-3">
         <h2 className="font-semibold text-slate-200">Case Fact Summary</h2>
-        {draft.applied_rules?.length > 0 && (
-          <span className="text-xs text-emerald-400">
-            {draft.applied_rules.length} operator rule(s) applied
-          </span>
-        )}
+        <div className="flex items-center gap-2">
+          {draft.applied_rules?.length > 0 && (
+            <span className="text-xs text-emerald-400 mr-1">
+              {draft.applied_rules.length} rule(s) applied
+            </span>
+          )}
+          <button
+            onClick={handleCopy}
+            className="rounded border border-slate-700 hover:border-slate-500 px-2.5 py-1 text-xs text-slate-300"
+            title="Copy the current draft text"
+          >
+            {copied ? "Copied ✓" : "Copy"}
+          </button>
+          <button
+            onClick={handleDownloadMd}
+            className="rounded border border-slate-700 hover:border-slate-500 px-2.5 py-1 text-xs text-slate-300"
+            title="Download a formatted report (fields + draft + evidence)"
+          >
+            ↓ .md
+          </button>
+          <button
+            onClick={handleDownloadJson}
+            className="rounded border border-slate-700 hover:border-slate-500 px-2.5 py-1 text-xs text-slate-300"
+            title="Download the full structured output as JSON"
+          >
+            ↓ .json
+          </button>
+        </div>
       </div>
 
       {/* Rendered view with clickable citations */}

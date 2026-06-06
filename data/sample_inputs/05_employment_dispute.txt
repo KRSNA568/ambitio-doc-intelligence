@@ -1,0 +1,51 @@
+IN THE UNITED STATES DISTRICT COURT
+FOR THE NORTHERN DISTRICT OF ILLINOIS
+
+Case No. 1:22-cv-04417
+
+PRIYA RAMESH,
+                              Plaintiff,
+        v.
+HELIODON SOFTWARE, INC.,
+                              Defendant.
+
+-------------------------------------------------------------
+COMPLAINT FOR WRONGFUL TERMINATION AND RETALIATION
+-------------------------------------------------------------
+
+DOCUMENT TYPE: Civil Complaint (Employment)
+
+PARTIES:
+  Plaintiff:  Priya Ramesh, an individual residing in Cook County, Illinois,
+              formerly employed as a Senior Data Engineer.
+  Defendant:  Heliodon Software, Inc., a Delaware corporation headquartered
+              in Chicago, Illinois.
+
+STATEMENT OF FACTS:
+
+1. Plaintiff was hired by Defendant on June 1, 2019, as a Senior Data
+   Engineer at an annual salary of $148,000, with a written offer letter
+   describing a 90-day severance entitlement upon termination without cause.
+
+2. On August 12, 2021, Plaintiff submitted a written internal complaint to
+   Human Resources alleging that Defendant was billing a government client
+   for hours not actually worked.
+
+3. On September 3, 2021, three weeks after the complaint, Plaintiff received
+   her first-ever negative performance review after two years of "Exceeds
+   Expectations" ratings.
+
+4. On November 19, 2021, Defendant terminated Plaintiff's employment,
+   citing "restructuring," though her team of six engineers was retained and
+   a replacement was hired in January 2022.
+
+5. Defendant refused to pay the 90-day severance described in the offer
+   letter, asserting the termination was "for cause."
+
+RELIEF SOUGHT:
+   Plaintiff seeks back pay, the contractual severance of $36,500, statutory
+   damages under the Illinois Whistleblower Act, reinstatement or front pay,
+   and reasonable attorneys' fees.
+
+Filed: March 2, 2022
+Attorney of Record: Marcus Lindqvist, Esq., Lindqvist Employment Law Group
